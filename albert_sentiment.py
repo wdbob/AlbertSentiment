@@ -1,6 +1,7 @@
 #! -*- coding:utf-8 -*-
 # 情感分析例子，加载albert_zh权重(https://github.com/brightmart/albert_zh)
 
+import os
 import numpy as np
 from bert4keras.backend import keras, set_gelu
 from bert4keras.tokenizers import Tokenizer
@@ -25,18 +26,18 @@ def load_data(filename):
     单条格式：(文本, 标签id)
     """
     D = []
-    with open(filename, encoding='utf-8') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         for l in f:
             label, text = l.strip().split('\t')
             if (label=='3'): label='0'
             D.append((text, int(label)))
     return D
 
-
+home = os.path.expanduser('~')
 # 加载数据集
-train_data = load_data('$HOME/datasets/sentiment/sentiment.train.tsv')
-valid_data = load_data('$HOME/datasets/sentiment/sentiment.valid.tsv')
-test_data = load_data('$HOME/datasets/sentiment/sentiment.test.tsv')
+train_data = load_data(os.path.join(home, 'datasets/sentiment/sentiment.train.tsv'))
+valid_data = load_data(os.path.join(home, 'datasets/sentiment/sentiment.valid.tsv'))
+test_data = load_data(os.path.join(home, 'datasets/sentiment/sentiment.test.tsv'))
 
 # 建立分词器
 tokenizer = Tokenizer(dict_path, do_lower_case=True)

@@ -16,7 +16,7 @@ set_gelu('tanh')  # 切换gelu版本
 num_classes = 2
 maxlen = 512
 batch_size = 32
-config_path = 'weights/albert_small_zh_google/albert_config.json'
+config_path = 'weights/albert_small_zh_google/albert_config_small_google.json'
 checkpoint_path = 'weights/albert_small_zh_google/albert_model.ckpt'
 dict_path = 'weights/albert_small_zh_google/vocab.txt'
 

@@ -34,9 +34,9 @@ def load_data(filename):
 
 
 # 加载数据集
-train_data = load_data('/$HOME/datasets/sentiment/sentiment.train.tsv')
-valid_data = load_data('/$HOME/datasets/sentiment/sentiment.valid.tsv')
-test_data = load_data('/$HOME/datasets/sentiment/sentiment.test.tsv')
+train_data = load_data('$HOME/datasets/sentiment/sentiment.train.tsv')
+valid_data = load_data('$HOME/datasets/sentiment/sentiment.valid.tsv')
+test_data = load_data('$HOME/datasets/sentiment/sentiment.test.tsv')
 
 # 建立分词器
 tokenizer = Tokenizer(dict_path, do_lower_case=True)

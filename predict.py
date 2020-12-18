@@ -9,7 +9,6 @@ def gen_output(test_generator):
     pred = np.array([]).reshape(0,2)
     label = []
     for x, y in test_generator:
-        print(x.shape, y.shape)
         y_pred = model.predict(x)
         cnt += 1
         print(str(cnt)+ '/'+ str(l))

@@ -15,7 +15,6 @@ def gen_output(test_generator):
         print(str(cnt)+ '/'+ str(l))
         pred = np.concatenate((pred, y_pred))
         #label += y
-        print(pred.shape, len(label))
     with open('data/test_pred.pkl', 'wb') as f:
         pickle.dump(pred, f)
 

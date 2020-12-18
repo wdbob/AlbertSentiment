@@ -7,14 +7,15 @@ def gen_output(test_generator):
     print('length of test data: ', l)
     cnt = 0
     pred = np.array([]).reshape(0,2)
-    label = np.array([]).reshape(-1)
+    label = []
     for x, y in test_generator:
+        print(x.shape, y.shape)
         y_pred = model.predict(x)
         cnt += 1
         print(str(cnt)+ '/'+ str(l))
         pred = np.concatenate((pred, y_pred))
-        label = np.concatenate((label, y))
-        print(pred.shape, label.shape)
+        label += y
+        print(pred.shape, len(label))
 
 
 if __name__ == "__main__":
